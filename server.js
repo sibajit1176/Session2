@@ -112,7 +112,7 @@ app.get("/logout", (req, res) => {
   req.session.isAuth = false;
   res.redirect("/login");
 });
-mongoose.connect("mongodb+srv://admin:admin@cluster0.o7ecu58.mongodb.net/Session?retryWrites=true&w=majority").then(()=>{
+mongoose.connect("process.env.DB").then(()=>{
   app.listen(PORT, (err) => {
     if (err) console.log(`Error listening on ${PORT}`);
     else console.log(`Servers started on port  http://localhost:${PORT}`);
